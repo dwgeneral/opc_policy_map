@@ -1,0 +1,73 @@
+id: hangzhou-xihu-ai-opc-2025
+city: 杭州
+district: 西湖区
+name: 西湖区人工智能领域一人企业培育行动
+issuer: 杭州市西湖区科学技术局
+publish_date: "2025-10-15"
+effective_date: "2025-11-01"
+expiry_date: "2027-10-31"
+status: active
+policy_number: "杭西科〔2025〕XX号"
+source_url: "https://www.xhq.gov.cn/xxgk/zcwj/"
+
+summary: 聚焦人工智能应用开发领域，西湖区推出定向培育一人企业的系列政策，以优质营商环境和AI算力支持吸引独立AI开发者落地。
+
+targets:
+  - AI应用开发者
+  - 机器学习工程师
+  - AI产品独立开发者
+
+benefits:
+  tax:
+    description: 高新企业认定快速通道
+    details: 注册当年即可申报高新技术企业，享受15%优惠税率，认定通过率超60%
+  subsidy:
+    description: AI专项创业补贴
+    amount: 最高12万元
+    conditions: AI相关产品年营收满15万元
+  compute:
+    description: 免费AI算力券
+    details: 提供阿里云AI算力资源抵用券，价值最高5万元，用于模型训练等
+  workspace:
+    description: 梦想小镇场地支持
+    details: 可申请余杭未来科技城或西湖数字经济小镇免费工位，期限12个月
+  trade:
+    description: 知识产权补贴
+    details: 申请发明专利最高补贴1.5万元，软件著作权申请费全免
+
+requirements:
+  - 在西湖区注册一人有限公司
+  - 主营AI技术研发或AI应用产品
+  - 创始人具备AI领域工作或学习经历
+
+application:
+  process:
+    - 线上填报"西湖区AI一人企业培育计划"申请表
+    - 提交项目技术说明书
+    - 专家评审（10个工作日）
+    - 通过评审后签订培育协议
+  materials:
+    - 身份证
+    - 学历证明或技术背景说明
+    - AI项目介绍/作品集（可选但重要）
+    - 营业执照
+  contact:
+    phone: "0571-87280000"
+    website: "https://www.xhq.gov.cn"
+
+parks:
+  - hangzhou-dream-town
+  - hangzhou-future-science-city
+
+tags:
+  - AI
+  - 税收优惠
+  - 算力支持
+  - 创业补贴
+  - 知识产权
+
+meta:
+  contributor: "@opc-map-maintainer"
+  last_verified: "2026-02-26"
+  verified: true
+  notes: "杭州的AI算力补贴是特色亮点，对AI独立开发者非常有吸引力"

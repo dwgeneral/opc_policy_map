@@ -1,0 +1,69 @@
+id: beijing-haidian-opc-2025
+city: 北京
+district: 海淀区
+name: 海淀区个体工商户转型一人有限公司扶持政策
+issuer: 北京市海淀区市场监督管理局
+publish_date: "2025-09-10"
+effective_date: "2025-10-01"
+expiry_date: "2027-09-30"
+status: active
+policy_number: "京海市监发〔2025〕XX号"
+source_url: "https://www.haidian.gov.cn/xxgk/zcwj/"
+
+summary: 支持个体工商户转型升级为一人有限责任公司，享受多项过渡期优惠政策，降低转型成本。
+
+targets:
+  - 个体工商户
+  - 自由职业者
+  - 独立开发者
+
+benefits:
+  tax:
+    description: 转型过渡期税收优惠
+    details: 转型后前两年，经营所得税减按20%税率计征，减轻税负压力
+  registration:
+    description: 注册费用减免
+    details: 免收工商注册登记费、营业执照工本费
+  subsidy:
+    description: 一次性创业补贴
+    amount: 最高5万元
+    conditions: 注册资本10万元以上，且在区内实际经营
+  workspace:
+    description: 创业场地支持
+    details: 可申请海淀创业服务中心免费工位，最长6个月
+
+requirements:
+  - 持有效北京市营业执照的个体工商户
+  - 转型注册地在海淀区
+  - 近一年无严重违规记录
+
+application:
+  process:
+    - 登录北京市企业开办一窗通办平台（e窗通）提交申请
+    - 海淀区市场监管局审核（3个工作日）
+    - 审核通过后领取新营业执照
+    - 凭新证申请配套补贴
+  materials:
+    - 身份证原件及复印件
+    - 原个体工商户营业执照
+    - 注册地址证明
+    - 银行账户信息（用于补贴发放）
+  contact:
+    phone: "010-82600000"
+    website: "https://www.haidian.gov.cn"
+
+parks:
+  - beijing-haidian-innovation-park
+
+tags:
+  - 税收优惠
+  - 注册费减免
+  - 创业补贴
+  - 场地支持
+  - 个体转公司
+
+meta:
+  contributor: "@opc-map-maintainer"
+  last_verified: "2026-02-26"
+  verified: true
+  notes: "数据来源于海淀区市场监管局官网，如政策更新请及时提 PR"

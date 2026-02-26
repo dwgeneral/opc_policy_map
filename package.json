@@ -1,14 +1,22 @@
 {
-  "name": "temp-init",
+  "name": "opc-policy-map",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate-data": "node scripts/validate-data.js"
   },
   "dependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "echarts": "^6.0.0",
+    "echarts-for-react": "^3.0.6",
+    "fuse.js": "^7.1.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
+    "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

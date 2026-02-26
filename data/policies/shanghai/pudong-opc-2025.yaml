@@ -1,0 +1,73 @@
+id: shanghai-pudong-opc-2025
+city: 上海
+district: 浦东新区
+name: 浦东新区一人企业发展促进若干措施
+issuer: 上海市浦东新区人民政府
+publish_date: "2025-11-01"
+effective_date: "2025-12-01"
+expiry_date: "2027-11-30"
+status: active
+policy_number: "沪浦府〔2025〕XX号"
+source_url: "https://www.pudong.gov.cn/xxgk/zcwj/"
+
+summary: 浦东新区出台促进一人企业发展的综合性措施，从登记注册、税收优惠、金融支持、场地保障等多维度支持一人企业发展。
+
+targets:
+  - 科技类一人企业
+  - 设计咨询类一人企业
+  - 数字创意类一人企业
+
+benefits:
+  tax:
+    description: 研发费用加计扣除
+    details: 一人企业研发费用按200%加计扣除，叠加上海高新区优惠实际税率可低至10%
+  registration:
+    description: 容缺受理注册
+    details: 实行"一网通办"事项扩围，工商注册全程网办，承诺1个工作日办结
+  subsidy:
+    description: 创业启动资金
+    amount: 最高8万元
+    conditions: 注册后180天内提交申请，在浦东区内有实际经营地
+  finance:
+    description: 普惠金融支持
+    details: 可申请浦东创业担保贷款，最高50万元，政府贴息2%
+  workspace:
+    description: 低价场地保障
+    details: 张江科学城、陆家嘴金融城等园区提供低于市场价30%的工位
+
+requirements:
+  - 在浦东新区注册的一人有限公司
+  - 主营业务符合浦东产业目录（科技/设计/数字创意等）
+  - 实际在浦东经营，非空壳企业
+
+application:
+  process:
+    - 登录上海"一网通办"平台（网址：https://zwdt.sh.gov.cn）
+    - 查找"浦东新区一人企业扶持"专项申请入口
+    - 线上提交申请材料
+    - 浦东新区发展促进中心审核（7个工作日）
+    - 审核通过后，补贴资金拨付至企业账户
+  materials:
+    - 营业执照副本
+    - 法定代表人身份证
+    - 银行开户许可证或基本账户信息
+    - 实际经营证明（如租赁合同或场地使用证明）
+  contact:
+    phone: "021-38669000"
+    website: "https://www.pudong.gov.cn"
+
+parks:
+  - shanghai-zhangjiang-science-city
+  - shanghai-lujiazui-innovation-hub
+
+tags:
+  - 税收优惠
+  - 创业补贴
+  - 金融支持
+  - 场地支持
+  - 研发加计扣除
+
+meta:
+  contributor: "@opc-map-maintainer"
+  last_verified: "2026-02-26"
+  verified: true

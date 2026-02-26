@@ -1,0 +1,86 @@
+id: suzhou-sip-opc-2026
+city: 苏州
+district: 苏州工业园区
+name: 苏州工业园区一人企业创新创业支持计划2026
+issuer: 苏州工业园区管理委员会
+publish_date: "2026-01-05"
+effective_date: "2026-01-01"
+expiry_date: "2028-12-31"
+status: active
+policy_number: "苏园管〔2026〕XX号"
+source_url: "https://www.sipac.gov.cn/sipweb/zwgk/zcwj/"
+
+summary: 苏州工业园区持续优化一人企业发展生态，推出"园区OPC伙伴计划"，在注册、落户、社保、场地、资金等方面给予系统性支持。
+
+targets:
+  - 技术型一人企业
+  - 科技独立开发者
+  - 数字服务提供者
+  - 创意咨询类自由职业者
+
+benefits:
+  tax:
+    description: 园区地方留存税返还
+    details: 增值税和企业所得税地方留存部分前3年全额返还，4-5年返还50%
+  registration:
+    description: 注册费用全免
+    details: 工商注册、公章刻制、银行开户等手续费全部由园区承担
+  subsidy:
+    description: OPC伙伴计划奖励
+    amount: 最高15万元
+    conditions: |
+      - 基础入驻奖励：2万元（注册即得）
+      - 年营收满30万元：+5万元
+      - 年营收满100万元：+8万元
+  workspace:
+    description: 免费工位（期限长）
+    duration: 24个月
+    details: 提供金鸡湖创业中心、苏州国际科技园等多处两年免费工位，期满按市场价80%续签
+  social_security:
+    description: 社保全额补贴
+    details: 前两年个人应缴社保全额由园区补贴（含医保、养老）
+  residence:
+    description: 落户支持
+    details: 在园区注册满一年，企业年营收20万元以上，可申请办理苏州工业园区户口
+
+requirements:
+  - 在苏州工业园区注册一人有限责任公司
+  - 主营业务属于园区鼓励产业目录
+  - 实际在园区内经营
+  - 创始人年龄45周岁以下（放宽条件可至55岁）
+
+application:
+  process:
+    - 登录苏州工业园区政务服务平台（sipac.gov.cn）
+    - 进入"OPC伙伴计划"专项申报
+    - 提交基础材料，等待初审（3个工作日）
+    - 现场勘察（如申请实体工位）
+    - 签订入驻协议，发放奖励
+  materials:
+    - 身份证
+    - 营业执照（或企业预核名通知书）
+    - 主营业务说明及作品/项目案例
+    - 银行账号
+  contact:
+    phone: "0512-62997000"
+    email: "opc@sipac.gov.cn"
+    website: "https://www.sipac.gov.cn"
+    address: 苏州市苏州工业园区星海街8号
+
+parks:
+  - suzhou-sip-innovation-center
+  - suzhou-international-science-tech-park
+
+tags:
+  - 税收返还
+  - 注册费全免
+  - 工位支持
+  - 社保补贴
+  - 落户支持
+  - 创业奖励
+
+meta:
+  contributor: "@opc-map-maintainer"
+  last_verified: "2026-02-26"
+  verified: true
+  notes: "苏州工业园区是目前OPC政策最系统、补贴力度最大的园区之一，落户支持尤为少见"

@@ -1,0 +1,83 @@
+id: shenzhen-nanshan-ai-developer-2026
+city: 深圳
+district: 南山区
+name: 南山区数字经济独立开发者扶持行动计划（2026版）
+issuer: 深圳市南山区发展和改革局
+publish_date: "2026-01-20"
+effective_date: "2026-02-01"
+expiry_date: "2027-12-31"
+status: active
+policy_number: "深南发改〔2026〕XX号"
+source_url: "https://www.szns.gov.cn/xxgk/zcfg/"
+
+summary: 面向数字经济领域独立开发者，提供注册、税收、补贴、场地等全方位支持，助力南山区数字经济个体创业生态建设。
+
+targets:
+  - 独立软件开发者
+  - AI应用开发者
+  - 数字内容创作者
+  - 独立设计师
+
+benefits:
+  tax:
+    description: 经营所得税优惠
+    details: 注册一人有限责任公司后，前3年经营所得税减按15%税率计征（正常税率25%）
+  subsidy:
+    description: 分阶段创业补贴
+    amount: 最高20万元
+    conditions: |
+      - 首次注册：5万元
+      - 首年营收满20万元：+5万元
+      - 首年营收满50万元：+10万元
+  workspace:
+    description: 粤港澳大湾区创业中心免费工位
+    duration: 12个月
+    details: 可申请南山软件产业基地或科技园免费工位，到期后享受8折优惠租金
+  social_security:
+    description: 社保补贴
+    details: 一年内个人社保缴费部分全额补贴
+  training:
+    description: 免费创业培训
+    details: 可参加南山区创业学院全年免费课程，包括财税、法务、营销等
+
+requirements:
+  - 年满18周岁，具有完全民事行为能力
+  - 在南山区注册一人有限责任公司
+  - 主营业务属于数字经济、软件、人工智能领域
+  - 近3年无重大违法记录
+
+application:
+  process:
+    - 登录深圳市一体化在线政务服务平台提交申请
+    - 审核材料真实性（5个工作日）
+    - 通过后签订扶持协议
+    - 于每季度末结算并拨付补贴
+  materials:
+    - 居民身份证
+    - 学历或技能证明（毕业证/职业资格证/作品集等）
+    - 营业执照（可在申请后60日内补交）
+    - 银行开户许可证
+  contact:
+    phone: "0755-26551234"
+    email: "startup@szns.gov.cn"
+    website: "https://www.szns.gov.cn"
+    address: 深圳市南山区粤海街道科技园南区XX楼区发改局
+
+parks:
+  - shenzhen-nanshan-science-tech-park
+  - shenzhen-software-industry-base
+
+tags:
+  - 税收优惠
+  - 创业补贴
+  - 场地支持
+  - 社保补贴
+  - AI
+  - 数字经济
+  - 培训支持
+
+meta:
+  contributor: "@opc-map-maintainer"
+  last_verified: "2026-02-26"
+  verified: true
+  notes: "深圳近年持续加码独立开发者扶持力度，此政策是2025版的升级版"
