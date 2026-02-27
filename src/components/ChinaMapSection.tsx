@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { CITY_COORDINATES } from '@/lib/mapData';
 
@@ -16,6 +16,7 @@ interface ScatterDataItem {
 }
 
 export function ChinaMapSection({ cityStats }: ChinaMapSectionProps) {
+  const [mapStatus, setMapStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const chartRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -28,17 +29,31 @@ export function ChinaMapSection({ cityStats }: ChinaMapSectionProps) {
     async function initChart() {
       const echarts = await import('echarts');
       let chinaGeoJson = null;
-      try {
-        const resp = await fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json');
-        chinaGeoJson = await resp.json();
-      } catch {
-        console.warn('Failed to load China GeoJSON');
+      // 优先使用本地文件，失败时回退到远程 CDN
+      const sources = [
+        '/china_geo.json',
+        'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json',
+      ];
+      for (const url of sources) {
+        try {
+          const resp = await fetch(url);
+          if (resp.ok) {
+            chinaGeoJson = await resp.json();
+            break;
+          }
+        } catch {
+          console.warn(`Failed to load China GeoJSON from ${url}`);
+        }
       }
 
-      if (!chinaGeoJson || !chartRef.current) return;
+      if (!chinaGeoJson || !chartRef.current) {
+        setMapStatus('error');
+        return;
+      }
 
       echarts.registerMap('china', chinaGeoJson);
       chart = echarts.init(chartRef.current, null, { renderer: 'canvas' });
+      setMapStatus('ready');
 
       const scatterData: ScatterDataItem[] = Object.entries(cityStats)
         .filter(([city]) => CITY_COORDINATES[city])
@@ -146,14 +161,30 @@ export function ChinaMapSection({ cityStats }: ChinaMapSectionProps) {
 
   return (
     <div className="relative w-full" style={{ height: 480 }}>
+      {/* Loading 状态 */}
+      {mapStatus === 'loading' && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-500">
+          <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+          <span className="text-sm">地图加载中…</span>
+        </div>
+      )}
+      {/* Error 状态 */}
+      {mapStatus === 'error' && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-slate-500">
+          <span className="text-2xl">🗺️</span>
+          <span className="text-sm">地图数据加载失败，请检查网络后刷新重试</span>
+        </div>
+      )}
       <div ref={chartRef} className="w-full h-full" />
-      <div className="absolute bottom-4 left-4 text-xs text-slate-600 flex items-center gap-3">
-        <span className="flex items-center gap-1">
-          <span className="w-3 h-3 rounded-full bg-indigo-500 inline-block" />
-          有 OPC 政策的城市
-        </span>
-        <span className="text-slate-700">（点击城市查看详情，可拖拽缩放）</span>
-      </div>
+      {mapStatus === 'ready' && (
+        <div className="absolute bottom-4 left-4 text-xs text-slate-600 flex items-center gap-3">
+          <span className="flex items-center gap-1">
+            <span className="w-3 h-3 rounded-full bg-indigo-500 inline-block" />
+            有 OPC 政策的城市
+          </span>
+          <span className="text-slate-700">（点击城市查看详情，可拖拽缩放）</span>
+        </div>
+      )}
     </div>
   );
 }
