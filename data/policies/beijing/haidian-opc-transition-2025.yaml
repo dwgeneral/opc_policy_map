@@ -1,69 +1,69 @@
 id: beijing-haidian-opc-2025
 city: 北京
 district: 海淀区
-name: 海淀区个体工商户转型一人有限公司扶持政策
-issuer: 北京市海淀区市场监督管理局
-publish_date: "2025-09-10"
-effective_date: "2025-10-01"
-expiry_date: "2027-09-30"
+name: 中关村AI北纬社区人工智能OPC服务计划
+issuer: 中关村科学城公司（指导）/ 氪星创服（承办）
+publish_date: "2025-12-10"
+effective_date: "2025-12-08"
 status: active
-policy_number: "京海市监发〔2025〕XX号"
-source_url: "https://www.bjhd.gov.cn/"
+source_url: "https://zyk.bjhd.gov.cn/jbdt/auto4510_51816/auto4510_54705/auto4510/auto4510/202512/t20251210_4796726.shtml"
 
-summary: 支持个体工商户转型升级为一人有限责任公司，享受多项过渡期优惠政策，降低转型成本。
+summary: 中关村AI北纬社区联动海淀校友驿站、海淀大学生实习实践平台，发布人工智能OPC服务计划，以6000平方米孵化空间为载体，构建"1个超级服务器+4大赋能支柱+3阶加速引擎"服务体系，助力具备AI技术背景的高校青年、科研人员及创意个体以OPC模式低成本创业。
 
 targets:
-  - 个体工商户
-  - 自由职业者
-  - 独立开发者
+  - AI 独立开发者（OPC）
+  - 高校青年创业者
+  - 科研人员转型创业者
+  - AI 原生创意创业团队
 
 benefits:
-  tax:
-    description: 转型过渡期税收优惠
-    details: 转型后前两年，经营所得税减按20%税率计征，减轻税负压力
-  registration:
-    description: 注册费用减免
-    details: 免收工商注册登记费、营业执照工本费
-  subsidy:
-    description: 一次性创业补贴
-    amount: 最高5万元
-    conditions: 注册资本10万元以上，且在区内实际经营
   workspace:
-    description: 创业场地支持
-    details: 可申请海淀创业服务中心免费工位，最长6个月
+    description: 6000㎡ 孵化空间，拎包入驻
+    details: 中关村AI北纬社区提供6000平方米孵化空间，支持拎包入驻，享受租金减免优惠
+  compute:
+    description: 弹性算力支持
+    details: 提供弹性算力接入及 Agent 超市，大幅降低 AI 创业者的技术门槛与使用成本
+  registration:
+    description: 一站式政务服务
+    details: 提供公司注册、财税、法务等一站式政务服务，降低 OPC 运营门槛
+  finance:
+    description: 三阶融资加速引擎
+    details: 联动资本、高校与产业链资源，为 OPC 提供融资加速、成长加速、产业加速的全周期支持
+  training:
+    description: 高校生态网络
+    details: 依托海淀37所高校、44万高校人才资源，构建"人才-高校-孵化-产业"贯通的OPC培育通道
 
 requirements:
-  - 持有效北京市营业执照的个体工商户
-  - 转型注册地在海淀区
-  - 近一年无严重违规记录
+  - 具备 AI 技术背景或创意方向
+  - 以 OPC（一人有限公司）或个人创业形式运营
+  - 项目方向符合人工智能赛道（AI应用、Agent、智能工具等）
 
 application:
   process:
-    - 登录北京市企业开办一窗通办平台（e窗通）提交申请
-    - 海淀区市场监管局审核（3个工作日）
-    - 审核通过后领取新营业执照
-    - 凭新证申请配套补贴
+    - 通过氪星创服或中关村AI北纬社区官方渠道提交入驻申请
+    - 社区团队审核项目方向与创始人背景
+    - 审核通过后签订入驻协议，享受对应支持服务
   materials:
-    - 身份证原件及复印件
-    - 原个体工商户营业执照
-    - 注册地址证明
-    - 银行账户信息（用于补贴发放）
+    - 个人身份证或营业执照（已注册）
+    - 项目介绍 / 产品 Demo 材料
+    - 技术背景说明（高校学历、科研经历等加分）
   contact:
-    phone: "010-82600000"
     website: "https://www.bjhd.gov.cn"
+    address: "北京市海淀区中关村AI北纬社区（毗邻中关村两院）"
 
 parks:
-  - beijing-haidian-innovation-park
+  - beijing-haidian-zhongguancun-ai-north
 
 tags:
-  - 税收优惠
-  - 注册费减免
-  - 创业补贴
+  - AI独立开发者
   - 场地支持
-  - 个体转公司
+  - 算力支持
+  - 创业孵化
+  - 高校资源
+  - 租金减免
 
 meta:
   contributor: "@opc-map-maintainer"
-  last_verified: "2026-02-26"
+  last_verified: "2026-02-27"
   verified: true
-  notes: "数据来源于海淀区市场监管局官网，如政策更新请及时提 PR"
+  notes: "原文来自海淀区政府信息公开大厅，发布日期2025-12-10，活动于2025-12-08举行。政策无明确到期日，建议定期核查。"
