@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getAllPolicies, getAllCities } from '@/lib/data';
 import { PoliciesClient } from './PoliciesClient';
 import type { Metadata } from 'next';
@@ -7,6 +8,16 @@ export const metadata: Metadata = {
   description: '浏览全国各城市一人企业（OPC）优惠政策，支持多维度筛选和全文搜索。',
 };
 
+function PoliciesLoading() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div key={i} className="glass-card p-5 h-48 skeleton" />
+      ))}
+    </div>
+  );
+}
+
 export default async function PoliciesPage() {
   const policies = getAllPolicies();
   const cities = getAllCities();
@@ -15,9 +26,15 @@ export default async function PoliciesPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="mb-8">
         <h1 className="text-3xl font-black gradient-text mb-2">政策库</h1>
-        <p className="text-slate-400">共收录 <span className="text-indigo-400 font-semibold">{policies.length}</span> 个政策，覆盖 <span className="text-indigo-400 font-semibold">{cities.length}</span> 个城市</p>
+        <p className="text-slate-400">
+          共收录{' '}
+          <span className="text-indigo-400 font-semibold">{policies.length}</span> 个政策，覆盖{' '}
+          <span className="text-indigo-400 font-semibold">{cities.length}</span> 个城市
+        </p>
       </div>
-      <PoliciesClient policies={policies} cities={cities} />
+      <Suspense fallback={<PoliciesLoading />}>
+        <PoliciesClient policies={policies} cities={cities} />
+      </Suspense>
     </div>
   );
 }
