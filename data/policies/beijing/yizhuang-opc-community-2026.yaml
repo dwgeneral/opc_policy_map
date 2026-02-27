@@ -7,7 +7,7 @@ publish_date: "2026-01-01"
 effective_date: "2026-01-01"
 expiry_date: "2028-12-31"
 status: active
-source_url: "https://www.bda.gov.cn/"
+source_url: "https://www.beijing.gov.cn/zhengce/fgwj/qxwj/kfqwj/"
 
 summary: 亦庄经济技术开发区推出"模数OPC社区"，位于通明湖信息城，首期3000平方米，面向AI领域独立开发者和一人有限公司，提供算力补贴、订单对接、空间运营、资本赋能的"5A全栈支持体系"，目标两年培育10000名AI独立开发者、孵化200家高成长OPC。
 
@@ -54,8 +54,9 @@ application:
     - 项目介绍或产品演示材料
     - 过往作品或营收证明（可选，有利于评级）
   contact:
-    website: "https://www.bda.gov.cn/"
+    website: "https://www.bda.gov.cn"
     address: "北京市大兴区北京经济技术开发区通明湖信息城"
+    note: "官网备用入口：https://www.beijing.gov.cn 搜索'经济技术开发区'"
 
 tags:
   - 算力补贴

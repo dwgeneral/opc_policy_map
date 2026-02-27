@@ -7,7 +7,7 @@ publish_date: "2025-04-03"
 effective_date: "2025-04-03"
 expiry_date: "2026-12-31"
 status: active
-source_url: "https://www.bjchy.gov.cn/xxgk/zcwj/"
+source_url: "http://www.bjchy.gov.cn/"
 
 summary: "朝阳区通过「1+7」产业政策体系及朝15条青年科技人才支持政策，为在朝阳注册的一人有限公司（满足中小企业或高新技术条件）提供研发补贴、贷款贴息、免费办公空间及创业补贴，是目前朝阳区可适用于OPC的核心政策集合。"
 
@@ -52,7 +52,7 @@ application:
     - 贷款合同及利息凭证（申请贴息时需提供）
   contact:
     phone: "010-85978989"
-    website: "https://www.bjchy.gov.cn"
+    website: "http://www.bjchy.gov.cn"
 
 tags:
   - 研发补贴

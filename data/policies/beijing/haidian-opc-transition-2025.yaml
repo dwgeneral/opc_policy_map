@@ -8,7 +8,7 @@ effective_date: "2025-10-01"
 expiry_date: "2027-09-30"
 status: active
 policy_number: "京海市监发〔2025〕XX号"
-source_url: "https://www.haidian.gov.cn/xxgk/zcwj/"
+source_url: "https://www.bjhd.gov.cn/"
 
 summary: 支持个体工商户转型升级为一人有限责任公司，享受多项过渡期优惠政策，降低转型成本。
 
@@ -50,7 +50,7 @@ application:
     - 银行账户信息（用于补贴发放）
   contact:
     phone: "010-82600000"
-    website: "https://www.haidian.gov.cn"
+    website: "https://www.bjhd.gov.cn"
 
 parks:
   - beijing-haidian-innovation-park
