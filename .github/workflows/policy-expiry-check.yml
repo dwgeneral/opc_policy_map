@@ -1,0 +1,44 @@
+name: 定期政策有效期检查 / Policy Expiry Check
+
+on:
+  # 每月1日 UTC 00:00 自动运行
+  schedule:
+    - cron: "0 0 1 * *"
+  # 支持手动触发
+  workflow_dispatch:
+
+jobs:
+  check-policy-expiry:
+    name: Check Expired & Soon-to-Expire Policies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Run expiry check script
+        id: expiry_check
+        run: node scripts/check-policy-expiry.js
+        continue-on-error: true
+
+      - name: Create Issue if policies need attention
+        if: steps.expiry_check.outputs.has_issues == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/expiry-report.md', 'utf8');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[自动检查] 政策有效期提醒 ${new Date().toISOString().slice(0, 7)}`,
+              body: report,
+              labels: ['data-maintenance', 'policy-expiry']
+            });

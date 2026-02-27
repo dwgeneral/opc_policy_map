@@ -1,0 +1,72 @@
+id: beijing-yizhuang-opc-community-2026
+city: 北京
+district: 经济技术开发区（亦庄）
+name: 亦庄模数OPC社区"5A支持体系"政策
+issuer: 北京经济技术开发区管理委员会
+publish_date: "2026-01-01"
+effective_date: "2026-01-01"
+expiry_date: "2028-12-31"
+status: active
+source_url: "https://www.bda.gov.cn/"
+
+summary: 亦庄经济技术开发区推出"模数OPC社区"，位于通明湖信息城，首期3000平方米，面向AI领域独立开发者和一人有限公司，提供算力补贴、订单对接、空间运营、资本赋能的"5A全栈支持体系"，目标两年培育10000名AI独立开发者、孵化200家高成长OPC。
+
+targets:
+  - AI 独立开发者
+  - 一人有限公司（OPC）
+  - 创意/设计/内容类超级个体
+  - 技术型自由职业者
+
+benefits:
+  compute:
+    description: 算力与模型补贴
+    details: 每年投入最高3亿元，提供算力券、模型券、数据券，企业最高享受50%模型补贴和30%算力补贴
+  subsidy:
+    description: 真实订单对接
+    details: 社区每年派发不少于100个真实订单，覆盖内容生成、视觉设计、IP宣发等高频场景，"入驻即接单，开工即收益"
+  workspace:
+    description: 专属物理空间
+    details: 社区提供播客录音棚、轻量直播间、路演厅、硬件展示区等，前三月免租，首年2.5折优惠
+  finance:
+    description: 微型风投加速基金
+    details: 联动区域人才基金与种子基金，为高成长潜力OPC项目提供灵活及时的资本赋能
+  registration:
+    description: 一站式公共服务
+    details: 提供公司注册、财税代理、知识产权申报等一站式服务，降低创业门槛与运营成本
+  residence:
+    description: 人才住房专属优惠
+    details: 被评为"亦城领军人才"的OPC，可获三年最高50万元奖励及专属住房优惠
+
+requirements:
+  - 注册地或经营地在北京经济技术开发区（亦庄）
+  - 主营业务为 AI 或数字创意相关领域
+  - 以一人有限公司或个人独资形式经营
+
+application:
+  process:
+    - 访问亦庄模数OPC社区官方渠道提交入驻申请
+    - 社区审核经营方向与创始人背景（约5个工作日）
+    - 审核通过后签订入驻协议，享受对应档次支持
+    - 按季度评估成长指标，符合条件可申请进阶算力/资金支持
+  materials:
+    - 个人身份证（法定代表人）
+    - 营业执照（若已注册）或注册意向说明
+    - 项目介绍或产品演示材料
+    - 过往作品或营收证明（可选，有利于评级）
+  contact:
+    website: "https://www.bda.gov.cn/"
+    address: "北京市大兴区北京经济技术开发区通明湖信息城"
+
+tags:
+  - 算力补贴
+  - AI独立开发者
+  - 场地支持
+  - 订单对接
+  - 创业孵化
+  - 人才奖励
+
+meta:
+  contributor: "@opc-map-maintainer"
+  last_verified: "2026-02-27"
+  verified: true
+  notes: "亦庄模数OPC社区于2026年1月正式启动。数据来源：北京日报、ncsti.gov.cn。如政策更新请及时提 PR"
