@@ -1,0 +1,94 @@
+name: Deploy to Volcengine TOS
+
+on:
+  push:
+    tags:
+      - "*"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Detect Node project
+        id: detect
+        run: |
+          if [ -f "package.json" ]; then
+            echo "IS_NODE=true" >> $GITHUB_ENV
+          else
+            echo "IS_NODE=false" >> $GITHUB_ENV
+          fi
+
+      - name: Set up Node.js
+        if: env.IS_NODE == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        if: env.IS_NODE == 'true'
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build project
+        if: env.IS_NODE == 'true'
+        run: |
+          if npm run | grep -qE '^  build'; then
+            npm run build
+          else
+            echo "No build script found, skipping build"
+          fi
+
+      - name: Detect build output directory
+        run: |
+          for d in out dist build public .; do
+            if [ -d "$d" ] && [ -f "$d/index.html" ]; then
+              echo "BUILD_DIR=$d" >> $GITHUB_ENV
+              echo "Using build directory: $d"
+              exit 0
+            fi
+          done
+          echo "Build output directory with index.html not found"
+          exit 1
+
+      - name: Verify build output
+        run: |
+          test -f "$BUILD_DIR/index.html"
+          ls -la "$BUILD_DIR" | head -20
+
+      - name: Install AWS CLI
+        run: |
+          curl -sS "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip -q awscliv2.zip
+          sudo ./aws/install --update || sudo ./aws/install
+          aws --version
+
+      - name: Configure AWS CLI for Volcengine TOS
+        run: |
+          aws configure set aws_access_key_id "${{ secrets.VOLC_AK }}"
+          aws configure set aws_secret_access_key "${{ secrets.VOLC_SK }}"
+          aws configure set default.region cn-beijing
+          aws configure set s3.addressing_style virtual
+
+      - name: Upload to TOS
+        run: |
+          aws s3 sync "$BUILD_DIR"/ s3://opcpolicymap/ \
+            --endpoint-url https://tos-s3-cn-beijing.volces.com \
+            --region cn-beijing \
+            --delete
+
+      - name: Configure Static Website Hosting
+        run: |
+          aws s3 website s3://opcpolicymap/ \
+            --index-document index.html \
+            --error-document index.html \
+            --endpoint-url https://tos-s3-cn-beijing.volces.com \
+            --region cn-beijing
