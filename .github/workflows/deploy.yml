@@ -92,3 +92,29 @@ jobs:
             --error-document index.html \
             --endpoint-url https://tos-s3-cn-beijing.volces.com \
             --region cn-beijing
+
+      # 如需在部署后自动刷新 CDN，请先在 GitHub Secrets 中配置 CDN_DOMAIN（例如：www.example.com）
+      - name: Refresh CDN cache
+        if: ${{ secrets.CDN_DOMAIN != '' }}
+        run: |
+          # 构造刷新 URL（支持目录刷新，默认刷新整个站点）
+          REFRESH_URL="https://${{ secrets.CDN_DOMAIN }}/"
+          echo "Refreshing CDN cache for: $REFRESH_URL"
+          # 调用火山引擎 CDN 刷新 API
+          resp=$(curl -s -w "\n%{http_code}" -X POST "https://cdn.volcengineapi.com/?Action=SubmitRefreshTask&Version=2021-03-01" \
+            -H "Content-Type: application/json" \
+            -H "X-Date: $(date -u '+%Y%m%dT%H%M%SZ')" \
+            -u "${{ secrets.VOLC_AK }}:${{ secrets.VOLC_SK }}" \
+            -d "{
+              \"Type\": \"dir\",
+              \"UrlList\": [\"$REFRESH_URL\"]
+            }")
+          http_code=$(echo "$resp" | tail -n1)
+          body=$(echo "$resp" | sed '$d')
+          if [ "$http_code" -eq 200 ]; then
+            task_id=$(echo "$body" | jq -r '.Result.TaskID // empty')
+            echo "CDN 刷新任务提交成功，TaskID: $task_id"
+          else
+            echo "CDN 刷新调用失败，HTTP 状态码: $http_code"
+            echo "响应: $body"
+          fi
